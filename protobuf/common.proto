@@ -1,0 +1,25 @@
+syntax = "proto3";
+package ms.register;
+
+message Reg {
+  //  服务名字
+  string name = 1;
+  RegData data = 2;
+}
+/**
+ * 注册数据
+ */
+message RegData {
+  string name = 1;
+  string host = 2;
+  int32 port = 3;
+  enum Type{
+    TCP = 0;
+    Http = 1;
+    Https = 3;
+    Http2 = 4;
+    Ws = 5;
+    Wss = 6;
+  }
+  Type type = 4;
+}
