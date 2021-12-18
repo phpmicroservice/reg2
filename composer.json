@@ -46,7 +46,8 @@
     "ext-hash": "*",
     "ext-date": "*",
     "ext-filter": "*",
-    "google/protobuf": "*"
+    "google/protobuf": "*",
+    "phpsoa/register_protobuf": "*"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.14",
@@ -109,5 +110,10 @@
       "protoc --proto_path=protobuf --php_out=protobuf/build protobuf/common.proto"
     ]
   },
-  "repositories": []
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://gitee.com/yingchaophp/register_protobuf.git"
+    }
+  ]
 }

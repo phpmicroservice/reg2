@@ -28,24 +28,16 @@ return [
             ],
         ],
         [
-            'name'      => 'ws',
-            'type'      => Server::SERVER_WEBSOCKET,
+            'name'      => 'tcp',
+            'type'      => Server::SERVER_BASE,
             'host'      => '0.0.0.0',
             'port'      => 9502,
             'sock_type' => SWOOLE_SOCK_TCP,
             'callbacks' => [
-                Event::ON_HAND_SHAKE => [
-                    Hyperf\WebSocketServer\Server::class,
-                    'onHandShake'
-                ],
-                Event::ON_MESSAGE    => [
-                    Hyperf\WebSocketServer\Server::class,
-                    'onMessage'
-                ],
-                Event::ON_CLOSE      => [
-                    Hyperf\WebSocketServer\Server::class,
-                    'onClose'
-                ],
+                Event::ON_RECEIVE => [
+                    \App\Controller\TcpController::class,
+                    'onReceive'
+                ]
             ],
         ],
     ],
