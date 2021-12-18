@@ -8,9 +8,6 @@
 
 ```bash
 
-php bin/hyperf.php gen:model   --pool=master --path=app/Model/Master --with-comments user
-
-
 
 ```
 

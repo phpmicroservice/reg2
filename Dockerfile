@@ -48,7 +48,8 @@ RUN pecl install swoole  && docker-php-ext-enable swoole
 
 # 安装 protobuf
 ENV PROTOBUF_VERSION=3.19.1
-RUN wget "https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOBUF_VERSION}/protobuf-php-${PROTOBUF_VERSION}.zip"
+#//  https://shrill-pond-3e81.hunsh.workers.dev/https://github.com/protocolbuffers/protobuf/releases/download/v3.19.1/protobuf-php-3.19.1.zip
+RUN wget "https://shrill-pond-3e81.hunsh.workers.dev/https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOBUF_VERSION}/protobuf-php-${PROTOBUF_VERSION}.zip"
 RUN unzip protobuf-php-${PROTOBUF_VERSION}.zip  && ls
 RUN cd protobuf-${PROTOBUF_VERSION} \
     && ./configure && make && make check && make install

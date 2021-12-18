@@ -1,14 +1,21 @@
-# 开发相关
+# 功能
 
-```bash
-sudo docker build -t reg:dev .
+1. 注册服务
+   1. 动态服务
+   2. 永久服务
+2. 服务列表
+   1. 给proxy用
+3. 服务心跳
+   1. tcp服务需要主动发送心跳
+   2. http服务会有本服务发起心跳
+4. 自定义心跳
+   1. 心跳间隔
+   2. 心跳延迟上线
+   3. 下线次数
 
-sudo docker run -d --name regdev -it reg:dev
-sudo docker run -d -v $PWD:/var/www/html --name regdev -it reg:dev
-
-
-
-
-sudo docker exec -it regdev  bash
-
-```
+## 备注
+1. 动态服务
+   1. 注册才存在的服务
+2. 永久服务
+   1. 持久化储存的服务
+   2. 心跳通过上线，不通过上线
